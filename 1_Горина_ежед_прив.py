@@ -14,14 +14,11 @@ class MainWindow(QMainWindow):
 
         self.label = QLabel("Привычки", self)
 
-        # Поле ввода
         self.input = QLineEdit("", self)
 
-        # Кнопки
         self.add_button = QPushButton("Добавить", self)
         self.done_button = QPushButton("Выполнено", self)
 
-        # Добавляем элементы
         layout.addWidget(self.label)
         layout.addWidget(self.input)
         layout.addWidget(self.add_button)
