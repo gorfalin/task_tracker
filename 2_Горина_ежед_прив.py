@@ -53,17 +53,14 @@ class DataApp(QMainWindow):
         self.setWindowTitle("Работа с данными")
         self.setGeometry(100, 100, 400, 300)
 
-        # Загрузка данных
         self.habits = self.load_from_file()
 
-        # Основные виджеты
         self.input = PlaceholderLineEdit("Введите привычку")
         self.label = QLabel("Сохранённые привычки:")
         self.list_label = QLabel()
         self.add_button = QPushButton("Добавить")
         self.save_button = QPushButton("Сохранить")
 
-        # Макет
         layout = QVBoxLayout()
         layout.addWidget(self.input)
         layout.addWidget(self.add_button)
@@ -75,7 +72,6 @@ class DataApp(QMainWindow):
         container.setLayout(layout)
         self.setCentralWidget(container)
 
-        # События
         self.add_button.clicked.connect(self.add_habit)
         self.save_button.clicked.connect(self.save_to_file)
 
