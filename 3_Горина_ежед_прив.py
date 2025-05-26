@@ -33,26 +33,25 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Ежедневные привычки")
         self.setGeometry(100, 100, 600, 400)
 
-        # Данные
         self.habits = self.load_from_file()
         self.current_month = QDate.currentDate().month()
         self.current_year = QDate.currentDate().year()
 
-        # Вкладки
+        # вкладки
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
-        # Вкладка "Привычки"
+        # вкладка привычки
         self.tab_habits = QWidget()
         self.init_tab_habits()
         self.tabs.addTab(self.tab_habits, "Привычки")
 
-        # Вкладка "Статистика"
+        # вкладка статистика
         self.tab_stats = QWidget()
         self.init_tab_stats()
         self.tabs.addTab(self.tab_stats, "Статистика")
 
-        # Вкладка "Настройки"
+        # вкладка настройки
         self.tab_settings = QWidget()
         self.init_tab_settings()
         self.tabs.addTab(self.tab_settings, "Настройки")
@@ -60,7 +59,6 @@ class MainWindow(QMainWindow):
     def init_tab_habits(self):
         layout = QVBoxLayout()
 
-        # Месяц и стрелки
         month_layout = QHBoxLayout()
         self.btn_prev = QPushButton("←")
         self.btn_next = QPushButton("→")
@@ -75,10 +73,9 @@ class MainWindow(QMainWindow):
         month_layout.addWidget(self.lbl_month)
         month_layout.addWidget(self.btn_next)
 
-        # Список привычек
         self.list_habits = QListWidget()
 
-        # Кнопки управления
+        # кнопки
         btn_layout = QHBoxLayout()
         self.btn_done = QPushButton("Выполнено")
         self.btn_delete = QPushButton("Удалить")
@@ -89,7 +86,6 @@ class MainWindow(QMainWindow):
         btn_layout.addWidget(self.btn_done)
         btn_layout.addWidget(self.btn_delete)
 
-        # Поле ввода и кнопка добавления
         add_layout = QHBoxLayout()
         self.input_new = PlaceholderLineEdit("Новая привычка...")
         self.btn_add = QPushButton("Добавить")
@@ -98,7 +94,6 @@ class MainWindow(QMainWindow):
         add_layout.addWidget(self.input_new)
         add_layout.addWidget(self.btn_add)
 
-        # Макет
         layout.addLayout(month_layout)
         layout.addWidget(self.list_habits)
         layout.addLayout(btn_layout)
