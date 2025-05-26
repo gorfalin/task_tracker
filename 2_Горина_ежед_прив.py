@@ -18,11 +18,11 @@ class MainWindow(QMainWindow):
         self.label = QLabel("Введите новую привычку:", self)
         layout.addWidget(self.label)
 
-        #Поле ввода
+        #поле ввода
         self.input = QLineEdit(self)
         layout.addWidget(self.input)
 
-        #Кнопки
+        #кнопки
         self.add_button = QPushButton("Добавить", self)
         self.add_button.clicked.connect(self.add_habit)
         layout.addWidget(self.add_button)
@@ -31,7 +31,7 @@ class MainWindow(QMainWindow):
         self.done_button.clicked.connect(self.mark_done)
         layout.addWidget(self.done_button)
 
-        #Список привычек
+        #список привычек
         self.habit_list = QListWidget(self)
         layout.addWidget(self.habit_list)
 
