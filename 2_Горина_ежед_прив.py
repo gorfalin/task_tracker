@@ -8,24 +8,21 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Ежедневные привычки")
         self.setGeometry(100, 100, 400, 400)
 
-        # Список привычек
         self.habits = []
 
-        # Центральный виджет
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
 
         layout = QVBoxLayout()
 
-        # Метка
         self.label = QLabel("Введите новую привычку:", self)
         layout.addWidget(self.label)
 
-        # Поле ввода
+        #Поле ввода
         self.input = QLineEdit(self)
         layout.addWidget(self.input)
 
-        # Кнопки
+        #Кнопки
         self.add_button = QPushButton("Добавить", self)
         self.add_button.clicked.connect(self.add_habit)
         layout.addWidget(self.add_button)
@@ -34,7 +31,7 @@ class MainWindow(QMainWindow):
         self.done_button.clicked.connect(self.mark_done)
         layout.addWidget(self.done_button)
 
-        # Список привычек
+        #Список привычек
         self.habit_list = QListWidget(self)
         layout.addWidget(self.habit_list)
 
